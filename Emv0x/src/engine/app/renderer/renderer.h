@@ -42,7 +42,6 @@ public:
 		bool resizable;
 		std::wstring name;
 		WindowMode window_mode;
-		LPCTSTR window_class_name;
 		HWND window_handle = NULL;
 		WNDCLASSEX wc;
 	};
@@ -61,18 +60,15 @@ public:
 	//Handles window events
 	void handle_windows();
 	
-
+	//Helper func to instantiate the window
+	bool initialize_windows();
 private:
 	RendererAPI renderer_api = RENDERER_API_NULL;
 	
 	//A vector of all instantiated windows
 	std::vector<InstantiatedWindow> instanced_windows;
 	
-	//Helper func to instantiate the window
-	bool initialize_window(HINSTANCE hInstance,
-		int ShowWnd,
-		int width, int height,
-		bool windowed);
+	
 
 	static LRESULT CALLBACK WndProc(HWND hWnd,
 		UINT msg,

@@ -6,8 +6,9 @@ int WINAPI WinMain(HINSTANCE hInstance,
     int nShowCmd) {
     App program;
 
-    program.renderer.hInstance = hInstance;
+    program.renderer.reference_hInstance = hInstance;
     program.Initialize();
+    program.renderer.initialize_windows();
 
     while (program.renderer.windows_open()) {
         program.Update();
