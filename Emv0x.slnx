@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Emv0x/Emv0x.vcxproj" Id="f4d37b31-e1b9-4b77-af8e-5c1371b1c243" />
+</Solution>
