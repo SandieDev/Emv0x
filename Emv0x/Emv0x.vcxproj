@@ -148,6 +148,8 @@
   <ItemGroup>
     <ClInclude Include="src\engine\app\app.h" />
     <ClInclude Include="src\engine\app\logger\logger.h" />
+    <ClInclude Include="src\engine\app\renderer\backend\backends.h" />
+    <ClInclude Include="src\engine\app\renderer\backend\dx11.h" />
     <ClInclude Include="src\engine\app\renderer\renderer.h" />
     <ClInclude Include="src\engine\emv0x.h" />
   </ItemGroup>

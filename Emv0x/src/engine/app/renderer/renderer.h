@@ -1,5 +1,6 @@
 #pragma once
 #include <windows.h>
+#include "backend/backends.h"
 #include <vector>
 #include <string>
 
@@ -58,7 +59,7 @@ public:
 	bool windows_open();
 
 	//Handles window events
-	void handle_windows();
+	int handle_windows();
 	
 	//Helper func to instantiate the window
 	bool initialize_windows();
@@ -68,7 +69,7 @@ private:
 	//A vector of all instantiated windows
 	std::vector<InstantiatedWindow> instanced_windows;
 	
-	
+	inline static HWND destroyed_window = nullptr;
 
 	static LRESULT CALLBACK WndProc(HWND hWnd,
 		UINT msg,

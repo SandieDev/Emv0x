@@ -1,6 +1,26 @@
 	#include "renderer.h"
+	#include <algorithm>
 
-	void Renderer::handle_windows() {
+	int Renderer::handle_windows() {
+		MSG msg;
+		ZeroMemory(&msg, sizeof(MSG));
+		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
+			if (msg.message == WM_QUIT) {
+				std::erase_if(instanced_windows, [](InstantiatedWindow& window) {
+					return window.window_handle == destroyed_window;
+				});
+				return (int)msg.wParam;
+			}
+			
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
+		else {
+
+		}
+
+		return (int)msg.wParam;
+
 		for (InstantiatedWindow& window : instanced_windows) {
 
 		}

@@ -23,12 +23,13 @@ LRESULT CALLBACK Renderer::WndProc(HWND hWnd,
 	switch (msg)
 	{
 	case WM_KEYDOWN:
-		if (wParam = VK_ESCAPE) {
+		if (wParam == VK_ESCAPE) {
 			DestroyWindow(hWnd);
 		}
 		return 0;
 
 	case WM_DESTROY:
+		destroyed_window = hWnd;
 		PostQuitMessage(0);
 		return 0;
 	}
