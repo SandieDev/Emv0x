@@ -9,6 +9,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
     program.renderer.reference_hInstance = hInstance;
     program.Initialize();
     program.renderer.initialize_windows();
+    program.renderer.setupRenderAPI();
 
     while (program.renderer.windows_open()) {
         program.Update();

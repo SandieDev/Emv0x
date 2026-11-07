@@ -1,10 +1,10 @@
 #include "engine/emv0x.h"
-#include <iostream>q 
+#include <iostream>
 
 
 
 void App::Initialize() {
-	renderer.set_renderer_api(renderer.RENDERER_API_DX11);
+	renderer.set_renderer_api(renderer.RENDERER_API_GL);
 	renderer.report_renderer_api();
 	Renderer::Window window;
 	window.fullscreen = false;

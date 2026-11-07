@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
 
-std::string logs_dir;
-bool logs_enabled;
+extern std::string logs_dir;
+extern bool logs_enabled;
 
 void logInfo(std::string message);
 

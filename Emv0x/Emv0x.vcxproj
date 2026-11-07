@@ -115,6 +115,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
       <EnableSegmentHeap>true</EnableSegmentHeap>
@@ -133,6 +134,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Manifest>
       <EnableSegmentHeap>true</EnableSegmentHeap>
@@ -140,6 +142,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\engine\app\logger\logger.cpp" />
+    <ClCompile Include="src\engine\app\renderer\backend\gl\gl_backend.cpp" />
+    <ClCompile Include="src\engine\app\renderer\backend\gl\src\glad.c" />
     <ClCompile Include="src\engine\app\renderer\renderer.cpp" />
     <ClCompile Include="src\engine\app\renderer\window_management.cpp" />
     <ClCompile Include="src\engine\emv0x.cpp" />
@@ -150,7 +154,12 @@
     <ClInclude Include="src\engine\app\logger\logger.h" />
     <ClInclude Include="src\engine\app\renderer\backend\backends.h" />
     <ClInclude Include="src\engine\app\renderer\backend\dx11.h" />
+    <ClInclude Include="src\engine\app\renderer\backend\gl.h" />
+    <ClInclude Include="src\engine\app\renderer\backend\gl\include\glad\glad.h" />
+    <ClInclude Include="src\engine\app\renderer\backend\gl\include\KHR\khrplatform.h" />
+    <ClInclude Include="src\engine\app\renderer\backend\windowsheader.h" />
     <ClInclude Include="src\engine\app\renderer\renderer.h" />
+    <ClInclude Include="src\engine\app\renderer\renderer_common.h" />
     <ClInclude Include="src\engine\emv0x.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,5 +1,14 @@
 #include "renderer.h"
 
+renderer_gl glBackend;
+
+int Renderer::setupRenderAPI() {
+	if (renderer_api == RENDERER_API_GL && !instanced_windows.empty()) {
+		glBackend.initGL(instanced_windows, instanced_windows[0].window_handle);
+	}
+	return 0;
+}
+
 void Renderer::set_renderer_api(RendererAPI api) {
 	renderer_api = api;
 }
@@ -31,6 +40,11 @@ LRESULT CALLBACK Renderer::WndProc(HWND hWnd,
 	case WM_DESTROY:
 		destroyed_window = hWnd;
 		PostQuitMessage(0);
+		return 0;
+	
+	case WM_SIZE:
+		int width = LOWORD(lParam);
+		int height = HIWORD(lParam);
 		return 0;
 	}
 	return DefWindowProc(hWnd, msg, wParam, lParam);
